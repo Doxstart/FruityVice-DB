@@ -1,4 +1,11 @@
 .sidebar-container{
+  display: flex;
+  flex-direction: column;
   border-top: 0px;
   padding-top: 0px;
+}
+
+.sidebar-menu{
+  display: flex;
+  flex-direction: column;
 }

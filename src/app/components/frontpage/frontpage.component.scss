@@ -1,0 +1,14 @@
+.front-element{
+  display: flex;
+  flex-direction: column;
+}
+
+.details{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.picture{
+  width: 100%;
+}
