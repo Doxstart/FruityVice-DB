@@ -1,0 +1,22 @@
+.main-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container{
+  margin-bottom: 0px;
+}
+
+.sidemain-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar{
+  flex-grow: 0.5;
+  padding-left: 20px;
+}
+
+.front{
+  flex-grow: 6;
+}

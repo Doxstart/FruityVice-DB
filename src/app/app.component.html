@@ -1,7 +1,11 @@
 
-<body class="mat-app-background">
-  <app-header></app-header>
-  <app-frontpage></app-frontpage>
-  <app-sidebar></app-sidebar>
+<body class="mat-app-background main-container">
+  <div class="header-container">
+    <app-header></app-header>
+  </div>
+  <div class="sidemain-container">
+    <app-sidebar class="sidebar"></app-sidebar>
+    <app-frontpage class="front"></app-frontpage>
+  </div>
   <router-outlet></router-outlet>
 </body>
