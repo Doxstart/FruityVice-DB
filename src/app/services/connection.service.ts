@@ -1,39 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map, tap } from 'rxjs';
-import { Fruits } from '../models/fruits';
-import { Prisoners } from '../models/prisoners';
-import { Image } from '../models/images';
+import { Observable, map } from 'rxjs';
+import { Products } from '../models/products';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConnectionService {
 
-  // readonly BASE_URL = "https://www.fruityvice.com/api/fruit/all";
-  readonly BASE_URL = "https://api.fbi.gov/wanted/v1/list";
-
+  readonly BASE_URL = "https://fakestoreapi.com/products";
 
   constructor(private http: HttpClient) {}
 
-  // getFruits(): Observable<Fruits[]>{
-  //   return this.http.get<any>(this.BASE_URL)
-  //   .pipe(
-  //     map((data: any) => data)
-  //   )
-  // }
-
-  getPrisoners(): Observable<Prisoners[]>{
+  getProducts(): Observable<Products[]>{
     return this.http.get<any>(this.BASE_URL)
     .pipe(
-      map((data: any) => data.items)
-    )
-  }
-
-  getImages(): Observable<Image[]>{
-    return this.getPrisoners()
-    .pipe(
-      map((data: any) => data.images)
+      map((data: any) => data)
     )
   }
 }

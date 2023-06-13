@@ -1,47 +1,19 @@
-<!-- <div *ngFor="let fruit of fruits" class="front-element">
-  <div class="details">
-    <p>{{fruit.name}}</p>
-    <p>{{fruit.family}}</p>
-    <p>{{fruit.order}}</p>
-    <p>{{fruit.genus}}</p>
-  </div>
-</div> -->
-
-<!-- MAT CARD -->
-
-<!-- <mat-card *ngFor="let fruit of fruits" class="front-element">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{fruit.name}}</mat-card-title>
-    <mat-card-subtitle>{{fruit.family}}</mat-card-subtitle>
+<mat-card *ngFor="let product of products" class="front-element">
+  <mat-card-header class="product-header">
+    <mat-card-title >
+      {{product.id}}. {{product.title}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      Price: {{product.price}}$
+    </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://i.pinimg.com/originals/ba/d6/66/bad666ef68eaffcf6d5b6d607751d337.jpg" alt="Photo of a fruit" class="picture">
-  <mat-card-content>
-    <p>
-      <mat-card-subtitle>{{fruit.order}}, {{fruit.genus}}</mat-card-subtitle>
-    </p>
-  </mat-card-content>
-</mat-card> -->
-
-<mat-card *ngFor="let prisoner of prisoners" class="front-element">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Name: {{prisoner.title}}</mat-card-title>
-    <mat-card-subtitle>Race: {{prisoner.race_raw}} Hair: {{prisoner.hair_raw}} Eyes: {{prisoner.eyes_raw}} Weight: {{prisoner.weight}}</mat-card-subtitle>
-  </mat-card-header>
-  <div *ngFor="let image of images">
-    <img mat-card-image src="{{image.thumb}}" alt="" class="picture">
-  </div>
+    <img mat-card-image src="{{product.image}}" alt="Image of Product" class="picture">
   <mat-card-content>
     <p>
       <mat-card-subtitle>
-        Description: {{prisoner.description}} <br>
-        Location: {{prisoner.locations}} <br>
-        Scars and Marks: {{prisoner.scars_and_marks}} <br>
-        Reward: {{prisoner.reward_text}} <br>
+        Category: {{product.category}} <br>
+        {{product.description}}
       </mat-card-subtitle>
     </p>
   </mat-card-content>
 </mat-card>
-
-

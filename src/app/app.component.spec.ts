@@ -17,13 +17,13 @@ describe('AppComponent', () => {
   it(`should have as title 'fruit-db'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('fruit-db');
+    expect(app.title).toEqual('fakestore-db');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('fruit-db app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('fakestore-db app is running!');
   });
 });
