@@ -26,7 +26,7 @@ export class SearchbarComponent {
 
   submitForm(){
     this.connServ.searchProducts(this.searchTerm).subscribe({
-      next: el => this.products = console.log(el) as any as Products[],
+      next: el => this.products = el as any as Products[],
       error: err => console.log(err)
     });
   }
