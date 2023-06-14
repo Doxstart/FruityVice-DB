@@ -25,4 +25,23 @@ export class ConnectionService {
       map((data: any) => data.filter((el: any) => el.title.toLowerCase().includes(term.toLowerCase())))
     )
   }
+
+  searchWithStartsFilter(term: string){
+    console.log("log me the elements that starts with " + term)
+  }
+
+  searchWithEqualFilter(term: string){
+    console.log("log me the elements that is equal to " + term)
+  }
+
+  searchWithEndsFilter(term: string){
+    console.log("log me the elements that ends with " + term)
+  }
+
+  searchWithIncludeFilter(term: string){
+    return this.http.get<any>(this.BASE_URL)
+    .pipe(
+      map((data: any) => data.filter((el: any) => el.title.toLowerCase().includes(term.toLowerCase())))
+    )
+  }
 }

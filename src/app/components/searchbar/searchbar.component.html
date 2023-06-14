@@ -64,6 +64,13 @@
         <div>
           <label>Search:</label>
           <input text name="searchTerm" value="" [(ngModel)]="searchTerm">
+          <label>Filter by:</label>
+          <select name="filterPick" [(ngModel)]="filterPick">
+            <option value="startsWithFilter">Starts with...</option>
+            <option value="isEqualToFilter">Is equal to...</option>
+            <option value="endsWithFilter">Ends with...</option>
+            <option value="includesFilter">Includes</option>
+          </select>
           <input type="submit" value="Search">
         </div>
       </form>
