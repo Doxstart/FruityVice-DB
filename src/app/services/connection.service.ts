@@ -23,6 +23,8 @@ export class ConnectionService {
     return this.http.get<any>(this.BASE_URL)
     .pipe(
       map((data: any) => data.filter((el: any) => el.title.includes(term)))
+      //console.log(term.toLowerCase())))
+      //console.log(el.title.toLowerCase())))
     )
   }
 }
