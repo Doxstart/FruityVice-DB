@@ -18,4 +18,11 @@ export class ConnectionService {
       map((data: any) => data)
     )
   }
+
+  searchProducts(term: string): Observable<Products[]>{
+    return this.http.get<any>(this.BASE_URL)
+    .pipe(
+      map((data: any) => data.filter((el: any) => el.title.includes(term)))
+    )
+  }
 }

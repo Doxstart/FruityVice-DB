@@ -1,3 +1,10 @@
+<!-- <body class="mat-app-background main-container">
+  <div class="header-container">
+    <app-header></app-header>
+  </div>
+  <div class="sidemain-container">
+    <app-sidebar class="sidebar"></app-sidebar>
+
 <mat-card *ngFor="let product of products" class="front-element">
   <mat-card-header class="product-header">
     <mat-card-title >
@@ -17,3 +24,36 @@
     </p>
   </mat-card-content>
 </mat-card>
+  </div>
+</body> -->
+
+
+<body class="mat-app-background main-container">
+  <div class="header-container">
+    <app-header></app-header>
+  </div>
+  <div class="sidemain-container">
+    <app-sidebar class="sidebar"></app-sidebar>
+    <div class="front">
+      <mat-card *ngFor="let product of products" class="front-element">
+        <mat-card-header class="product-header">
+          <mat-card-title >
+            {{product.id}}. {{product.title}}
+          </mat-card-title>
+          <mat-card-subtitle>
+            Price: {{product.price}}$
+          </mat-card-subtitle>
+        </mat-card-header>
+          <img mat-card-image src="{{product.image}}" alt="Image of Product" class="picture">
+        <mat-card-content>
+          <p>
+            <mat-card-subtitle>
+              Category: {{product.category}} <br>
+              {{product.description}}
+            </mat-card-subtitle>
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</body>

@@ -1,15 +1,93 @@
-<!-- <mat-form-field>
-  <input matInput type="text" placeholder="Search"> -->
-  <!-- [(ngModel)]="" -->
-  <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear"> -->
-    <!-- *ngIf="" -->
-    <!-- (click)="clearSearch()"
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field> -->
+<!-- <form (ngSubmit)="submitForm()">
+  <div>
+    <label>Search:</label>
+    <input email name="email" required [(ngModel)]="searchTerm">
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
 
+<mat-card *ngFor="let product of products" class="front-element">
+  <mat-card-header class="product-header" *ngIf="product.title.includes(searchTerm)">
+    <mat-card-title >
+      {{product.id}}. {{product.title}}
+    </mat-card-title>
+  </mat-card-header>
+</mat-card> -->
 
-<mat-form-field>
-  <input mattInput type="text" placeholder="Search">
-  <mat-icon>search</mat-icon>
-</mat-form-field>
+<!-- SOPRA FUNZIONA, SOTTO PROVO A IMPLEMENTARLA NEL CODICE -->
+
+<!-- <body class="mat-app-background main-container">
+  <div class="header-container">
+    <app-header></app-header>
+  </div>
+  <div class="sidemain-container">
+    <app-sidebar class="sidebar"></app-sidebar>
+    <form (ngSubmit)="submitForm()">
+      <div>
+        <label>Search:</label>
+        <input email name="email" required [(ngModel)]="searchTerm">
+      </div>
+    </form>
+
+    <mat-card *ngFor="let product of products" class="front-element">
+      <mat-card-header class="product-header" *ngIf="product.title.includes(searchTerm)">
+        <mat-card-title >
+          {{product.id}}. {{product.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          Price: {{product.price}}$
+        </mat-card-subtitle>
+      </mat-card-header>
+        <img *ngIf="product.title.includes(searchTerm)" mat-card-image src="{{product.image}}" alt="Image of Product" class="picture">
+      <mat-card-content *ngIf="product.title.includes(searchTerm)">
+        <p>
+          <mat-card-subtitle>
+            Category: {{product.category}} <br>
+            {{product.description}}
+          </mat-card-subtitle>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</body> -->
+
+<body class="mat-app-background main-container">
+  <div class="header-container">
+    <app-header></app-header>
+  </div>
+  <div class="sidemain-container">
+    <app-sidebar class="sidebar"></app-sidebar>
+    <div class="front">
+      <form (ngSubmit)="submitForm()">
+        <div>
+          <label>Search:</label>
+          <input text name="searchTerm" value="" [(ngModel)]="searchTerm">
+          <input type="submit" value="Search">
+        </div>
+      </form>
+
+      <mat-card *ngFor="let product of products" class="front-element">
+        <mat-card-header class="product-header" *ngIf="product.title.includes(searchTerm)">
+          <mat-card-title >
+            {{product.id}}. {{product.title}}
+          </mat-card-title>
+          <mat-card-subtitle>
+            Price: {{product.price}}$
+          </mat-card-subtitle>
+        </mat-card-header>
+          <img *ngIf="product.title.includes(searchTerm)" mat-card-image src="{{product.image}}" alt="Image of Product" class="picture">
+        <mat-card-content *ngIf="product.title.includes(searchTerm)">
+          <p>
+            <mat-card-subtitle>
+              Category: {{product.category}} <br>
+              {{product.description}}
+            </mat-card-subtitle>
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</body>
+
