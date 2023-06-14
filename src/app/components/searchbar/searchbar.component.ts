@@ -29,5 +29,7 @@ export class SearchbarComponent {
       next: el => this.products = el as any as Products[],
       error: err => console.log(err)
     });
+
+    this.searchTerm = "";
   }
 }
