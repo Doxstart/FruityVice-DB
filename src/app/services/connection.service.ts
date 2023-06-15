@@ -40,8 +40,11 @@ export class ConnectionService {
       ))
   }
 
-  searchWithEndsFilter(term: string){
-    console.log("log me the elements that ends with " + term)
+  searchWithEndsFilter(term: string): Observable<Products[]>{
+    return this.http.get<any>(this.BASE_URL)
+    .pipe(
+      map((data: any) => data.filter((el: any) => el.title.toLowerCase().endsWith(term.toLowerCase())))// el.title.toLowerCase().startsWith(term)))
+      )
   }
 
   searchWithIncludeFilter(term: string){

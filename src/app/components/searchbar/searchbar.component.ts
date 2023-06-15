@@ -52,7 +52,10 @@ export class SearchbarComponent {
       });
     }
     if(this.filterPick==="endsWithFilter"){
-      this.connServ.searchWithEndsFilter(this.searchTerm);
+      this.connServ.searchWithEndsFilter(this.searchTerm).subscribe({
+        next: el => this.products = el as any as Products[],
+        error: err => console.log(err)
+      });
     }
     if(this.filterPick==="includesFilter"){
       this.connServ.searchProducts(this.searchTerm).subscribe({

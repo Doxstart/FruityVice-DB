@@ -76,7 +76,8 @@
       </form>
 
       <mat-card *ngFor="let product of products" class="front-element">
-        <mat-card-header class="product-header" *ngIf="'product.title.includes(searchTerm)' || '(product.title.toString()).isEqual(searchTerm)' || 'el.title.startsWith(term)'">
+        <mat-card-header class="product-header" *ngIf="'product.title.includes(searchTerm)' || '(product.title.toString()).isEqual(searchTerm)' || 'el.title.startsWith(term)' ||
+        'el.title.endsWith(term)'">
           <mat-card-title>
             {{product.id}}. {{product.title}}
           </mat-card-title>
@@ -84,8 +85,10 @@
             Price: {{product.price}}$
           </mat-card-subtitle>
         </mat-card-header>
-          <img *ngIf="'product.title.includes(searchTerm)' || '(product.title.toString()).isEqual(searchTerm)' || 'el.title.startsWith(term)'" mat-card-image src="{{product.image}}" alt="Image of Product" class="picture">
-        <mat-card-content *ngIf="'product.title.includes(searchTerm)' || '(product.title.toString()).isEqual(searchTerm)' || 'el.title.startsWith(term)'">
+          <img *ngIf="'product.title.includes(searchTerm)' || '(product.title.toString()).isEqual(searchTerm)' || 'el.title.startsWith(term)' ||
+          'el.title.endsWith(term)'" mat-card-image src="{{product.image}}" alt="Image of Product" class="picture">
+        <mat-card-content *ngIf="'product.title.includes(searchTerm)' || '(product.title.toString()).isEqual(searchTerm)' || 'el.title.startsWith(term)' ||
+        'el.title.endsWith(term)'">
           <p>
             <mat-card-subtitle>
               Category: {{product.category}} <br>
