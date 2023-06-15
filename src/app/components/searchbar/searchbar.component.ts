@@ -40,10 +40,10 @@ export class SearchbarComponent {
 
   submitForm(){
     if(this.filterPick==="startsWithFilter"){
-      this.connServ.searchWithStartsFilter(this.searchTerm); /*.subscribe({
-        next: el => console.log(el)//this.products = el as any as Products[],
+      this.connServ.searchWithStartsFilter(this.searchTerm).subscribe({
+        next: el => this.products = el as any as Products[],
         error: err => console.log(err)
-      })*/
+      });
     }
     if(this.filterPick==="isEqualToFilter"){
       this.connServ.searchWithEqualFilter(this.searchTerm).subscribe({
