@@ -76,7 +76,7 @@
       </form>
 
       <mat-card *ngFor="let product of products" class="front-element">
-        <mat-card-header class="product-header" *ngIf="product.title.includes(searchTerm)">
+        <mat-card-header class="product-header" *ngIf="'product.title.includes(searchTerm)' || '(product.title.toString()).isEqual(searchTerm)'">
           <mat-card-title >
             {{product.id}}. {{product.title}}
           </mat-card-title>

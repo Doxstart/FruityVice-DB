@@ -30,8 +30,11 @@ export class ConnectionService {
     console.log("log me the elements that starts with " + term)
   }
 
-  searchWithEqualFilter(term: string){
-    console.log("log me the elements that is equal to " + term)
+  searchWithEqualFilter(term: string): Observable<Products[]>{
+    return this.http.get<any>(this.BASE_URL)
+    .pipe(
+      map((data: any) => data.filter((el: any) => el.title === term)
+      ))
   }
 
   searchWithEndsFilter(term: string){
